@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="css/main_1.css">
+  <link rel="stylesheet" href="css/reset.css">
+
+</head>
+
+<body style="overflow-x: hidden;">
+
+  <div id="slider"></div>
+
+  <div id="leftWrap_0">
+
+    <div class="content_0">
+
+      <div class="content_1">
+
+        <div class="box_1">
+          <img src="img/keenyG.png" alt="켄지">
+        </div>
+
+        <div class="box_2">
+
+          <div class="text_1">
+            <h3>[트렌드 클래핑] 2024 Kenny G</h3>
+          </div>
+
+          <div class="text_2">
+            <p>뮤지션 Kenny G가정규 앨범 [Innocence]의 무대를 국내에서 처음 선보일 예정입니다!
+              Kenny G 만의 독특한 스타일로 재해석한 고전 음악들과 자작곡들로 구성된 이번 앨범은 발매와 동시에 큰 화제를 불러일으켰으니
+              Kenny G의 공연을 오랫동안 기다려온 국내 팬들은 더욱 기대해 주시면 좋을 것 같습니다!</p>
+          </div>
+
+          <button class="btn_1"><a href="#"></a><span>MORE...</span></button>
+
+        </div>
+
+      </div>
+
+      <div class="content_2">
+
+        <div class="box_1">
+          <img src="img/트와이스2.png" alt="트와이스">
+        </div>
+
+        <div class="box_2">
+
+          <div class="text_1">
+            <h3>[트와이스] 그들의 무한한 날갯짓</h3>
+          </div>
+
+          <div class="text_2">
+            <p>10년차 걸그룹 TWICE가 새 미니 앨범, [With YOU-th]를 발매했습니다. 어느덧 데뷔 10년차를 맞은 그들의
+              미니 13집인데요 타이틀곡 'ONE SPARK'와 'I GOT YOU'의 무대를 선보이며, 현지 팬들과 호흡하기도 했지요.</p>
+          </div>
+
+          <button class="btn_1"><a href="#"></a><span>MORE...</span></button>
+        </div>
+      </div>
+
+      <div class="content_3">
+
+        <div class="box_1">
+          <img src="img/하이키1.png" alt="하이키">
+        </div>
+
+        <div class="box_2">
+
+          <div class="text_1">
+            <h3>[하이키] H1-KEY의 새로운 도전</h3>
+          </div>
+
+          <div class="text_2">
+            <p>H1-KEYnote 프로젝트는 'KEYNOTE'라는 단어에서 시작되었다. H1-KEY (하이키) 음악의 기조이자 H1-KEY (하이키) 그룹이
+               가진 '좋은 음악'이라는 정체성에서 출발하게 된 이 프로젝트는 온전히 노래와 가사가 주는 힘만으로 동시대를 살아가고 있는 이들에게 
+               위로와 감동을 주고자 한다.</p>
+          </div>
+
+          <button class="btn_1"><a href="#"></a><span>MORE...</span></button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    $(window).scroll(function () {
+
+      let ws = $(this).scrollTop();
+      let fixWrap = $('#leftWrap_0').offset().top;
+      let move = ws - fixWrap;
+      let end = $('.content_0').width() - $(window).innerWidth();
+
+      if (ws > fixWrap && ws < fixWrap + end) {
+        $('.content_0').css('transform', `translateX(-${move}px)`);
+      } else if (ws >= fixWrap + end) {
+        $('.content_0').css('transform', `translateX(-${end}px)`);
+
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
